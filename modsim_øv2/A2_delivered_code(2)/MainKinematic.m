@@ -6,8 +6,10 @@ time_final = 20; %Final time
 
 %%%%%% MODIFY. Initial state values and parameter values
 
-state = [0, 0, 0];
-omega = [0.2, 0.1, 0.3]';
+R = [0 0 0;
+    0 0 0;
+    0 0 0];
+omega = [2, 3, 4]';
 parameters = omega; 
 
 % Simulate dynamics
@@ -19,7 +21,7 @@ try
     %%%%%% - "state" will contain representations of the solid orientation (SO(3)).
     %%%%%% - use the "reshape" function to turn a matrix into a vector or vice-versa.
 
-    [time,statetraj] = ode45(@(t,x)Kinematics(t, x, parameters),[0,time_final],state);
+    [time,statetraj] = ode45(@(t,x)Kinematics(t, x, parameters),[0,time_final],R);
 
 catch message
     display('Your simulation failed with the following message:')
