@@ -45,7 +45,7 @@ for rotcase = 1:3
             MakeFrame( zeros(3,1),eye(3),ScaleFrame,FS,0.8*SW,'','facealpha', 0.5, 'color', 'k')
             MakeFrame( zeros(3,1),Rab,ScaleFrame,FS,0.8*SW,'','facealpha', 0.5, 'color', 'b')
 
-
+ 
             h{1} = mArrow3(zeros(3,1),sqrt(3)*ScaleFrame*Oa, 'stemWidth', 2*SW); 
             set(h{1}, 'facecolor', [0.1,0.5,0.1],'facealpha', 0.5);
 

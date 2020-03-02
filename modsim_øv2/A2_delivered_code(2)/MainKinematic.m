@@ -43,11 +43,12 @@ while time_display < time(end)
 
     state_animate = interp1(time,statetraj,time_display); %interpolate the simulated state at the current clock time
 
-    p     = [5;5;5];  % Position of the single body
+    %p     = [5;5;5];  % Position of the single body
     
     omega = parameters;
     [R, M] = Rotations(state_animate');
-
+    p = state_animate(1:3)';
+    
     %3D below this point
     figure(1);clf;hold on
     MakeFrame( zeros(3,1),eye(3),ScaleFrame,FS,SW,'a', 'color', 'k')
